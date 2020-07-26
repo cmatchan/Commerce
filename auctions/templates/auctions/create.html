@@ -3,11 +3,22 @@
 {% block body %}
     <form action="{% url 'create' %}" method="post">
         {% csrf_token %}
-        <div class="form-group">
-            <input autofocus class="form-control" type="text" name="title" placeholder="Title">
+
+        <div class="form-row">
+            <div class="form-group col-2">
+                <input autofocus class="form-control" type="text" name="title" placeholder="Title">
+            </div>
         </div>
         <div class="form-group">
             <textarea class="form-control" name="description" placeholder="Description" rows="8"></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-0.5">
+                <label for="bid">$</label>
+            </div>
+            <div class="form-group col-2">
+                <input id="bid" class="form-control" type="number" name="bid" placeholder="Starting Bid">
+            </div>
         </div>
         <button type="submit" class="btn btn-primary">Create</button>
     </form>
