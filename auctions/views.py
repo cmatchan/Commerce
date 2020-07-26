@@ -63,4 +63,9 @@ def register(request):
         return render(request, "auctions/register.html")
 
 def create(request):
-    return HttpResponse("create new listing")
+    if request.method == "POST":
+        title = request.POST["title"]
+        description = request.POST["description"]
+        return HttpResponse("title: " + title + ", description: " + description)
+    else:
+        return render(request, "auctions/create.html")
