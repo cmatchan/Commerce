@@ -6,7 +6,13 @@ class User(AbstractUser):
     pass
 
 class Listings(models.Model):
-    pass
+    seller = models.ForeignKey(User, on_delete=models.CASCADE)
+    last_modified = models.DateTimeField(auto_now=True)
+    title = models.CharField(max_length=64)
+    description = models.TextField()
+    starting_bid = models.DecimalField(max_digits=12, decimal_places=2)
+    image_url = models.CharField(max_length=64)
+    category = models.CharField(max_length=64)
 
 class Bids(models.Model):
     pass

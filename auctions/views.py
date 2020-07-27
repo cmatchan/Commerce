@@ -66,6 +66,6 @@ def create(request):
     if request.method == "POST":
         title = request.POST["title"]
         description = request.POST["description"]
-        return HttpResponse("title: " + title + ", description: " + description)
+        return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "auctions/create.html")
