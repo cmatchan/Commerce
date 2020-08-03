@@ -19,3 +19,6 @@ class Bids(models.Model):
 
 class Comments(models.Model):
     pass
+
+class Category(models.Model):
+    pass
