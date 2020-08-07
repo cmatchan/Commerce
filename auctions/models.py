@@ -5,7 +5,10 @@ from django.db import models
 class User(AbstractUser):
     pass
 
-class Listings(models.Model):
+    def __str__(self):
+        return f"{self.username}"
+
+class Listing(models.Model):
     seller = models.ForeignKey(User, on_delete=models.CASCADE)
     last_modified = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=64)
@@ -14,10 +17,13 @@ class Listings(models.Model):
     image_url = models.CharField(max_length=64)
     category = models.CharField(max_length=64)
 
-class Bids(models.Model):
+    def __str__(self):
+        return f"{self.title} by {self.seller}"
+
+class Bid(models.Model):
     pass
 
-class Comments(models.Model):
+class Comment(models.Model):
     pass
 
 class Category(models.Model):
