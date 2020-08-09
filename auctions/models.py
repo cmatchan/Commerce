@@ -13,7 +13,7 @@ class Listing(models.Model):
     last_modified = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=64)
     description = models.TextField()
-    starting_bid = models.DecimalField(max_digits=12, decimal_places=2)
+    price = models.DecimalField(max_digits=12, decimal_places=2)
     image_url = models.CharField(max_length=64)
     category = models.CharField(max_length=64)
 

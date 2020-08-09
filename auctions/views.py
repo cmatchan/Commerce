@@ -73,7 +73,7 @@ def create(request):
         image = request.POST["image_url"]
         category = request.POST["category"]
         listing = Listing(seller = user, title = title, description = description, \
-            starting_bid = bid, image_url = image, category = category)
+            price = bid, image_url = image, category = category)
         listing.save()
         return HttpResponseRedirect(reverse("index"))
     else:
